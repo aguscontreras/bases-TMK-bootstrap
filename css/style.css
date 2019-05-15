@@ -1,0 +1,258 @@
+/* FONTS */
+
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'),
+        url('../fonts/lato-v15-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v15-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'),
+        url('../fonts/lato-v15-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v15-latin-700.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-900 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Lato Black'), local('Lato-Black'),
+        url('../fonts/lato-v15-latin-900.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v15-latin-900.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-mono-regular - latin */
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Mono'), local('RobotoMono-Regular'),
+        url('../fonts/roboto-mono-v6-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/roboto-mono-v6-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-mono-500 - latin */
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Mono Medium'), local('RobotoMono-Medium'),
+        url('../fonts/roboto-mono-v6-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/roboto-mono-v6-latin-500.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* COLORES */
+
+:root {
+    --color-gris-fondo: #F4F4F4;
+    --color-gris-claro: #E0E0E0;
+    --color-gris-medio: #C4C4C4;
+    --color-gris-oscuro: #737373;
+    --color-azul: #39454E;
+    --color-verde: #00CF9B;
+    --color-verde-hover: rgb(0, 184, 138);
+    --color-naranja: rgb(255, 112, 51);
+    --color-naranja-hover: rgb(231, 101, 45);
+    --color-celeste: rgb(211, 230, 247);
+}
+
+/* GLOBALES */
+
+* {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+/* ROWS */
+
+.row .menu, .instrucciones {
+    height: 100vh;
+}
+
+.row .titulo {
+    height: 10vh;
+}
+
+.row .descripcion {
+    height: 10vh;
+}
+
+.row .cuerpo {
+    height: 50vh;
+}
+
+.row .footer {
+    height: 30vh;
+}
+
+/* TITULO PRINCIPAL */
+
+.titulo h1 {
+    font-size: .9rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 10vh;
+    color: var(--color-gris-medio)
+}
+
+/* DESCRIPCIONES */
+
+.descripcion h2 {
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--color-azul);
+    margin: 0;
+}
+
+.descripcion h5 {
+    font-size: 1rem;
+    color: var(--color-gris-oscuro)
+}
+
+/* CUERPO */
+
+.textarea {
+    height: 100%;
+    border-radius: .25rem;
+    background-color: var(--color-gris-fondo);
+}
+
+.textarea textarea {
+    font-family: 'Roboto Mono', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    height: 93%;
+    width: 100%;
+    display: block;
+    resize: none;
+    color: var(--color-gris-oscuro);
+    background-color: transparent;
+    border: none;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.textarea .contador {
+    height: 7%;
+    width: 100%;
+    background-color: var(--color-gris-medio);
+    color: var(--color-gris-oscuro);
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.textarea .contador span {
+    font-family: 'Roboto Mono', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.contenedor-inputs .input-text {
+    background-color: rgb(239, 247, 255);
+}
+
+.contenedor-inputs .input-text:nth-child(4n+1), .contenedor-inputs .input-text:nth-child(4n+2) {
+    background-color: var(--color-celeste);
+}
+
+/* FOOTERS */
+
+.btn-primary {
+    height: 14vh;
+    width: 100%;
+    background-color: var(--color-verde);
+    border: var(--color-verde);
+    font-weight: 600;
+    font-size: 1.1rem;
+
+}
+
+.btn-primary:hover {
+    background: var(--color-verde-hover);
+}
+
+.btn-primary:active {
+    background: var(--color-verde-hover);
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+    -moz-filter: brightness(110%);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: var(--color-verde-hover);
+    border-color: var(--color-verde-hover);
+}
+
+.btn-primary span {
+    position: absolute
+}
+
+/* MENU */
+
+.menu, .instrucciones {
+    padding-top: 10vh;
+    background-color: var(--color-azul);
+    color: #fff;
+}
+
+.menu h3, .instrucciones h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-top: 1rem;
+}
+
+.menu ul {
+    list-style: none;
+    padding: .5rem;
+}
+
+.menu li, .instrucciones li {
+    padding: .2rem 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: var(--color-verde);
+    font-weight: 600;
+}
+
+/* INSTRUCCIONES */
+
+.instrucciones {
+    left: -16.666667%;
+    /* left: 0; */
+    padding: 10vh 0;
+    overflow: hidden;
+    font-size: .95rem;
+    transition: .3s ease left;
+}
+
+.instrucciones:hover {
+    left: 0;
+}
+
+.instrucciones ol {
+    padding: 0;
+}
