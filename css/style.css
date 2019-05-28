@@ -164,12 +164,18 @@
 }
 
 .contenedor-inputs .input-text {
-    background-color: rgb(239, 247, 255);
+    background-color: #fff;
+    border: 2px solid var(--color-gris-medio);
+    font-size: .95rem;
 }
 
-.contenedor-inputs .input-text:nth-child(4n+1), .contenedor-inputs .input-text:nth-child(4n+2) {
-    background-color: var(--color-celeste);
+div.contenedor-flecha i {
+    color: var(--color-verde);
 }
+
+/* .contenedor-inputs .input-text:nth-child(4n+1), .contenedor-inputs .input-text:nth-child(4n+2) {
+    background-color: var(--color-celeste);
+} */
 
 /* FOOTERS */
 
