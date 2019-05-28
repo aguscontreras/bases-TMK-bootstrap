@@ -252,7 +252,7 @@ div.contenedor-flecha i {
     padding: 10vh 0;
     overflow: hidden;
     font-size: .95rem;
-    transition: .3s ease left;
+    transition: .3s ease-in-out left;
 }
 
 .instrucciones:hover {
