@@ -179,14 +179,17 @@ div.contenedor-flecha i {
 
 /* FOOTERS */
 
-.btn-primary {
+.procesar {
     height: 14vh;
     width: 100%;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    
     background-color: var(--color-verde);
     border: var(--color-verde);
     font-weight: 600;
-    font-size: 1.1rem;
-
 }
 
 .btn-primary:hover {
