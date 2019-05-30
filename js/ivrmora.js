@@ -21,10 +21,19 @@ let spanContadorEntrada,
 let divContador = document.querySelectorAll('.contador');
 
 
+/* VARIABLES PROPIAS DE LA SECCION */
+
+let col_id = [],
+    col_cuit = [],
+    col_denominacion = [],
+    col_estado = [],
+    col_fijoContactado = [],
+    col_celContactado = [],
+    col_base = [];
+
 /* FUNCIONES */
 
 // Actualiza los datos al ingresar texto en los textareas y arma el contador de entrada
-
 textareaEntrada.oninput = function () {
     datosEntrada = textareaEntrada.value.split('\n');
     setTimeout(() => {
@@ -38,16 +47,12 @@ textareaEntrada.oninput = function () {
     }, 100);
 }
 
+// Llamada desde el boton Procesar
+function armarIVR() {
+    armarColumnas();
+};
+
 // Arma las columnas
-
-let col_id = [],
-    col_cuit = [],
-    col_denominacion = [],
-    col_estado = [],
-    col_fijoContactado = [],
-    col_celContactado = [],
-    col_base = [];
-
 function armarColumnas() {
     for (let i = 0; i < datosEntrada.length; i++) {
         datosEntrada[i] = datosEntrada[i].split(/\t/g);
@@ -61,15 +66,24 @@ function armarColumnas() {
         col_denominacion.push(datosEntrada[i][2]);
         col_base.push(datosEntrada[i][6]);
     }
+
+    // Comprueba que estén todas las columnas
+    if (datosEntrada[0].length < 7) {
+        bootbox.alert("Faltan datos, se deben copiar las 7 columnas de la base original", function () {
+            location.reload();
+        })
+    } else {
+        procesarDatos(col_fijoContactado);
+        procesarDatos(col_celContactado);
+        imprimirDatos();
+    }
 }
+
 
 // Normalizar los numeros de telefono
 function procesarDatos(a) {
 
     /* LIMPIA NUMEROS Y QUITA EL PRIMER CERO EN CASO QUE EL TELEFONO COMIENCE CON DOS CEROS*/
-
-    //let limpiarCaracteres = /\D/g;
-
     for (let j = 0; j < a.length; j++) {
         a[j] = a[j].replace(/\D/g, '');
         if (a[j] != undefined && a[j].startsWith("00")) {
@@ -78,7 +92,6 @@ function procesarDatos(a) {
     };
 
     /* PARA QUITAR TODOS LOS CARACTERES QUE NO SEAN NUMEROS Y AGREGAR 0 INICIAL */
-
     for (let j = 0; j < a.length; j++) {
         if (a[j][0] != "0") {
             a[j] = "0" + a[j];
@@ -86,7 +99,6 @@ function procesarDatos(a) {
     };
 
     /* QUITA LA CARACTERISTICA DE CORDOBA 0351 */
-
     for (let j = 0; j < a.length; j++) {
         if (a[j].startsWith("0351")) {
             a[j] = a[j].replace("0351", "");
@@ -94,7 +106,6 @@ function procesarDatos(a) {
     };
 
     /* ACOMODA LOS 015 INICALES */
-
     for (let j = 0; j < a.length; j++) {
         if (a[j].substr(0, 3) == "015") {
             a[j] = a[j].substr(1);
@@ -102,7 +113,6 @@ function procesarDatos(a) {
     };
 
     /* ACOMODA LOS QUE COMIENZAN CON 04 Y DEJA SOLO 4 */
-
     for (let j = 0; j < a.length; j++) {
         if (a[j].substr(0, 2) == "04") {
             a[j] = a[j].substr(1);
@@ -110,7 +120,6 @@ function procesarDatos(a) {
     };
 
     /* AGREGA UN 15 PARA LOS NUMEROS QUE NO COMIENCEN CON 4 Y 15 */
-
     for (let j = 0; j < a.length; j++) {
         if (a[j][0] != "4" && a[j][0] != "1" && a[j][0] != "0") {
             a[j] = "15" + a[j];
@@ -118,7 +127,6 @@ function procesarDatos(a) {
     };
 
     /* QUITA LOS DATOS QUE SEAN UN SOLO 0 */
-
     for (let j = 0; j < a.length; j++) {
         if (a[j].length < 2) {
             a[j] = "";
@@ -139,13 +147,11 @@ function imprimirDatos() {
     textareaSalida.value = datosSalida.toString().replace(/,/g, "\n");
 
     // Actualiza el contador de salida
-
     contadorSalida = datosSalida.length;
     spanContadorSalida = `<span>Filas: ${contadorSalida}</span>`;
     divContador[1].innerHTML = spanContadorSalida;
 
     // Copiado automatico del resultado
-
     setTimeout(() => {
         if (copiarResultado) {
             textareaSalida.select();
@@ -153,16 +159,10 @@ function imprimirDatos() {
             alert('Resultado copiado');
         }
     }, 300);
-    
+
 }
 
-function armarIVR() {
-    armarColumnas();
-    procesarDatos(col_fijoContactado);
-    procesarDatos(col_celContactado);
-    imprimirDatos();
-};
-
+// Para probar cosas
 function imprimePrueba(e) {
     console.table(e);
 };
