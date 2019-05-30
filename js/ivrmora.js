@@ -68,10 +68,10 @@ function procesarDatos(a) {
 
     /* LIMPIA NUMEROS Y QUITA EL PRIMER CERO EN CASO QUE EL TELEFONO COMIENCE CON DOS CEROS*/
 
-    let limpiarCaracteres = /\D/g;
+    //let limpiarCaracteres = /\D/g;
 
     for (let j = 0; j < a.length; j++) {
-        a[j] = a[j].replace(limpiarCaracteres, "");
+        a[j] = a[j].replace(/\D/g, '');
         if (a[j] != undefined && a[j].startsWith("00")) {
             a[j] = a[j].substr(1);
         };
@@ -127,14 +127,33 @@ function procesarDatos(a) {
 
 };
 
+let copiarResultado = true;
+
 function imprimirDatos() {
 
-    for(let j = 0; j < datosEntrada.length; j++) {
-        datosSalida.push(col_fijoContactado[j] + '\t' + col_celContactado[j] + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + col_cuit[j]+ '\t' + col_denominacion[j] + '\t' + col_base[j]);
+    // Junta las columnas y las ordena en el textarea de salida
+    for (let j = 0; j < datosEntrada.length; j++) {
+        datosSalida.push(col_fijoContactado[j] + '\t' + col_celContactado[j] + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + col_cuit[j] + '\t' + col_denominacion[j] + '\t' + col_base[j]);
     }
 
     textareaSalida.value = datosSalida.toString().replace(/,/g, "\n");
 
+    // Actualiza el contador de salida
+
+    contadorSalida = datosSalida.length;
+    spanContadorSalida = `<span>Filas: ${contadorSalida}</span>`;
+    divContador[1].innerHTML = spanContadorSalida;
+
+    // Copiado automatico del resultado
+
+    setTimeout(() => {
+        if (copiarResultado) {
+            textareaSalida.select();
+            document.execCommand('copy');
+            alert('Resultado copiado');
+        }
+    }, 300);
+    
 }
 
 function armarIVR() {
