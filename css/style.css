@@ -232,7 +232,7 @@ div.contenedor-flecha i {
 
 .menu ul {
     list-style: none;
-    padding: .5rem;
+    padding: 0;
 }
 
 .menu li, .instrucciones li {
