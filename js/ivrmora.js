@@ -11,12 +11,12 @@ let datosEntrada, datosSalida = [];
 
 //Contadores de datos (debajo de los textareas) y tiempo total
 
-let contadorTiempo, contadorEntrada, contadorSalida;
+let inicioTiempo, finTiempo, contadorFilasEntrada, contadorFilasSalida, contadorColumnasEntrada, contadorColumnasSalida;
 
 //Contenedores para insertar los contaores en su lugar
 
-let spanContadorEntrada,
-    spanContadorSalida = `<span>Filas: ${contadorSalida}</span>`;
+let spancontadorFilasEntrada,
+    spancontadorFilasSalida = `<span>Filas: ${contadorFilasSalida}</span>`;
 
 let divContador = document.querySelectorAll('.contador');
 
@@ -37,13 +37,13 @@ let col_id = [],
 textareaEntrada.oninput = function () {
     datosEntrada = textareaEntrada.value.split('\n');
     setTimeout(() => {
-        contadorEntrada = 0;
+        contadorFilasEntrada = 0;
         if (datosEntrada.slice(-1) == "") {
             datosEntrada.pop();
         }
-        contadorEntrada = datosEntrada.length;
-        spanContadorEntrada = `<span>Filas: ${contadorEntrada}</span>`;
-        divContador[0].innerHTML = spanContadorEntrada;
+        contadorFilasEntrada = datosEntrada.length;
+        spancontadorFilasEntrada = `<span>Filas: ${contadorFilasEntrada}</span>`;
+        divContador[0].innerHTML = spancontadorFilasEntrada;
     }, 100);
 }
 
@@ -54,6 +54,10 @@ function armarIVR() {
 
 // Arma las columnas
 function armarColumnas() {
+
+    inicioTiempo = new Date();
+
+
     for (let i = 0; i < datosEntrada.length; i++) {
         datosEntrada[i] = datosEntrada[i].split(/\t/g);
     };
@@ -67,12 +71,14 @@ function armarColumnas() {
         col_base.push(datosEntrada[i][6]);
     }
 
+
     // Comprueba que estén todas las columnas
     if (datosEntrada[0].length < 7) {
         bootbox.alert("Faltan datos, se deben copiar las 7 columnas de la base original", function () {
             location.reload();
         })
     } else {
+        // Si está todo lo necesario, llama a las demas funciones
         procesarDatos(col_fijoContactado);
         procesarDatos(col_celContactado);
         imprimirDatos();
@@ -83,6 +89,24 @@ function armarColumnas() {
 // Normalizar los numeros de telefono
 function procesarDatos(a) {
 
+    col_cuit.forEach(item => {
+        item = item.replace(/\W\D/g, '');
+    });
+
+    col_denominacion.forEach(item => {
+        item = item.replace(/\W\D/g, '');
+    });
+
+    col_base.forEach(item => {
+        item = item.replace(/\W\D/g, '');
+    });
+
+    for (let j = 0; j < a.length; j++) {
+        if (a[j] == '') {
+            a[j] = '0';
+        };
+    };
+
     /* LIMPIA NUMEROS Y QUITA EL PRIMER CERO EN CASO QUE EL TELEFONO COMIENCE CON DOS CEROS*/
     for (let j = 0; j < a.length; j++) {
         a[j] = a[j].replace(/\D/g, '');
@@ -90,6 +114,7 @@ function procesarDatos(a) {
             a[j] = a[j].substr(1);
         };
     };
+
 
     /* PARA QUITAR TODOS LOS CARACTERES QUE NO SEAN NUMEROS Y AGREGAR 0 INICIAL */
     for (let j = 0; j < a.length; j++) {
@@ -146,19 +171,24 @@ function imprimirDatos() {
 
     textareaSalida.value = datosSalida.toString().replace(/,/g, "\n");
 
+    // Muestra el tiempo total
+    finTiempo = new Date();
+
+    tiempoTotal = finTiempo - inicioTiempo;
+
     // Actualiza el contador de salida
-    contadorSalida = datosSalida.length;
-    spanContadorSalida = `<span>Filas: ${contadorSalida}</span>`;
-    divContador[1].innerHTML = spanContadorSalida;
+    contadorFilasSalida = datosSalida.length;
+    spancontadorFilasSalida = `<span>Filas: ${contadorFilasSalida}</span> | <span>Tiempo: ${tiempoTotal}ms</span>`;
+    divContador[1].innerHTML = spancontadorFilasSalida;
 
     // Copiado automatico del resultado
     setTimeout(() => {
         if (copiarResultado) {
             textareaSalida.select();
             document.execCommand('copy');
-            alert('Resultado copiado');
+            mostrarPopper();
         }
-    }, 300);
+    }, 200);
 
 }
 
