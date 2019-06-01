@@ -73,7 +73,11 @@
                 </div>
                 <div class="col-4">
                     <div class="textarea">
-                        <textarea name="entrada" class="p-3" id="salida"></textarea>
+                        <div id="popup">
+                            <i class="fas fa-info-circle"></i>
+                            &nbsp;Resultado copiado
+                        </div>
+                        <textarea name="salida" class="p-3" id="salida"></textarea>
                         <div class="contador text-center">
                             <span>Contador</span>
                         </div>
