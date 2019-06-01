@@ -6,13 +6,19 @@
             <a href="">Normalizador</a>
         </li>
         <li>
-            <a href="">Reemplazar</a>
+            <a href="reemplazar.php">Reemplazar</a>
         </li>
         <li>
-            <a href="">Concatenar (simple)</a>
+            <a href="concatenar.php">Concatenar (simple)</a>
         </li>
         <li>
             <a href="">Concatenar (múltiple)</a>
+        </li>
+    </ul>
+    <h3>Telemercado</h3>
+    <ul>
+        <li>
+            <a href="ivrmora.php">IVR Mora</a>
         </li>
     </ul>
     <h3>BPC</h3>
