@@ -60,6 +60,7 @@
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+
 /* COLORES */
 
 :root {
@@ -75,11 +76,13 @@
     --color-celeste: rgb(211, 230, 247);
 }
 
+
 /* GLOBALES */
 
 * {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
+
 
 /* ROWS */
 
@@ -103,6 +106,7 @@
     height: 30vh;
 }
 
+
 /* TITULO PRINCIPAL */
 
 .titulo h1 {
@@ -112,6 +116,7 @@
     line-height: 10vh;
     color: var(--color-gris-medio)
 }
+
 
 /* DESCRIPCIONES */
 
@@ -126,6 +131,7 @@
     font-size: 1rem;
     color: var(--color-gris-oscuro)
 }
+
 
 /* CUERPO */
 
@@ -173,20 +179,10 @@ div.contenedor-flecha i {
     color: var(--color-verde);
 }
 
-/* .contenedor-inputs .input-text:nth-child(4n+1), .contenedor-inputs .input-text:nth-child(4n+2) {
-    background-color: var(--color-celeste);
-} */
 
 /* FOOTERS */
 
-.procesar {
-    height: 14vh;
-    width: 100%;
-    font-size: 1.1rem;
-}
-
 .btn-primary {
-    
     background-color: var(--color-verde);
     border: var(--color-verde);
     font-weight: 600;
@@ -212,6 +208,12 @@ div.contenedor-flecha i {
 
 .btn-primary span {
     position: absolute
+}
+
+.procesar {
+    height: 14vh;
+    width: 100%;
+    font-size: 1.1rem;
 }
 
 /* MENU */
@@ -266,7 +268,7 @@ div.contenedor-flecha i {
     padding: 0;
 }
 
-/* Inputs */
+/* INPUTS */
 
 /* Customize the label (the container) */
 .container-check {
@@ -294,45 +296,12 @@ div.contenedor-flecha i {
     height: 0;
     width: 0;
   }
-  
-  /* Create a custom checkbox */
-  /* .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: .2rem;
-  } */
-  
-  
-  /* When the checkbox is checked, add a blue background */
-  /* .container-check input:checked ~ .checkmark {
-    background-color: #2196F3;
-  } */
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* .checkmark:after {
-    content: "a";
-    position: absolute;
-    display: none;
-  } */
-  
-  /* Show the checkmark when checked */
-  /* .container-check input:checked ~ .checkmark:after {
-    display: block;
-  } */
-  
-  /* Style the checkmark/indicator */
-  /* .container-check .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  } */
+
+  /* Popper */
+  #popup {
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 4px;
+    color: var(--color-naranja);
+  }
