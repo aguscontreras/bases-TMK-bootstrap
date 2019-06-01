@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Bases de datos sistemas</title>
 </head>
@@ -59,17 +60,17 @@
             <main class="col-10 main">
                 <div class="row titulo">
                     <div class="container-fluid text-center titulo">
-                        <h1 class="text-uppercase">Titulo 1</h1>
+                        <h1 class="text-uppercase">IVR MORA</h1>
                     </div>
                 </div>
                 <div class="row descripcion justify-content-center">
                     <div class="col-5 text-center align-self-end">
-                        <h2>Titulo 2</h2>
-                        <h5>Titulo 3</h5>
+                        <h2 class="my-1">Ingreso de datos</h2>
+                        <h5>Columnas de la A a la G</h5>
                     </div>
                     <div class="col-5 text-center align-self-end">
-                        <h2>Titulo 2</h2>
-                        <h5>Titulo 3</h5>
+                        <h2 class="my-1">Resultado</h2>
+                        <h5>Teléfonos normalizados y columnas ordenadas</h5>
                     </div>
                 </div>
                 <div class="row cuerpo justify-content-center">
@@ -83,8 +84,12 @@
                     </div>
                     <div class="col-5">
                         <div class="textarea">
-                            <textarea name="entrada" class="p-3" id="salida"></textarea>
-                            <div class="contador text-center">
+                            <div id="popup">
+                                    <i class="fas fa-info-circle"></i>
+                                    &nbsp;Resultado copiado
+                            </div>
+                            <textarea name="salida" class="p-3" id="salida"></textarea>
+                            <div class="contador text-center" id="contadorSalida">
                                 <span>Filas: 0</span>
                             </div>
                         </div>
@@ -92,12 +97,9 @@
                 </div>
                 <div class="row footer justify-content-center align-items-center">
                     <div class="col-2">
-                        <button class="btn btn-primary procesar position-relative" onclick="armarIVR();">
-                            Procesar
+                        <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="armarIVR();">
+                            <!-- <div>Procesar</div> -->
                         </button>
-                        <!-- <label class="container-check mt-2"> Auto copiar resultado
-                            <input type="checkbox" checked="checked">
-                        </label> -->
                     </div>
                 </div>
             </main>
@@ -107,11 +109,31 @@
     <!-- Dependencias -->
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/popper.js"></script>
     <script src="../js/bootbox.all.min.js"></script>
     <script src="../js/bootbox.locales.min.js"></script>
 
+    <!-- Comportamiento general -->
+    <script src="../js/ui-control.js"></script>
+
     <!-- Scripts de cada seccion -->
     <script src="../js/ivrmora.js"></script>
+
+    <!-- Popper -->
+    <script>
+
+    var ref = $('#contadorSalida');
+    var popup = $('#popup');
+    popup.hide();
+
+    function mostrarPopper() {
+        popup.show();
+        var popper = new Popper(ref, popup, {
+            placement: 'bottom'
+        })
+    }
+
+    </script>
 
 
 </body>
