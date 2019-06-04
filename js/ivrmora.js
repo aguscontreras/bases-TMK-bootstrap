@@ -49,14 +49,13 @@ textareaEntrada.oninput = function () {
 
 // Llamada desde el boton Procesar
 function armarIVR() {
-    armarColumnas();
+    armarColumnasIVR();
 };
 
 // Arma las columnas
-function armarColumnas() {
+function armarColumnasIVR() {
 
     inicioTiempo = new Date();
-
 
     for (let i = 0; i < datosEntrada.length; i++) {
         datosEntrada[i] = datosEntrada[i].split(/\t/g);
@@ -70,7 +69,6 @@ function armarColumnas() {
         col_denominacion.push(datosEntrada[i][2]);
         col_base.push(datosEntrada[i][6]);
     }
-
 
     // Comprueba que estén todas las columnas
     if (datosEntrada[0].length < 7) {
