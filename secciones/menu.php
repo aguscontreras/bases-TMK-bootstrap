@@ -3,7 +3,7 @@
     <h3>Generales</h3>
     <ul>
         <li>
-            <a href="">Normalizador</a>
+            <a href="normalizar.php">Normalizador</a>
         </li>
         <li>
             <a href="reemplazar.php">Reemplazar</a>
