@@ -1,10 +1,10 @@
-<?php include 'header.php' ?>
+<?php include '../includes/header.php' ?>
 
 <div class="container-fluid">
     <div class="row">
 
         <!-- Menu -->
-        <?php include 'menu.php' ?>
+        <?php include '../includes/menu.php' ?>
 
         <!-- Instrucciones de cada seccion -->
         <aside class="col-2 px-5 instrucciones position-fixed">
@@ -78,4 +78,4 @@
 <!-- Scripts de cada seccion -->
 <script src="../js/normalizar.js"></script>
 
-<?php include 'footer.php' ?>
+<?php include '../includes/footer.php' ?>

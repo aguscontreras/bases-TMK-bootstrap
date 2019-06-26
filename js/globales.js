@@ -84,7 +84,29 @@ function armarColumnasGlobal() {
                 col_7.push(datosEntrada[i][6]);
         }
     }
+
+    // Quita las columnas sobrantes
+    // Se recorren las columnas buscando los valores UNDEFINED, y se crea una columna de prueba con estos valores
+    // Si la columna de prueba tiene la misma cantidad de UNDEFINED que la columna en cuestion,
+    // se borra del array COLUMNAS tantas veces como columnas UNDEFINED haya
+
+    // Cuenta cuantas columnas eliminar del array COLUMNAS
+    let popCols = 0;
+
+    columnas.forEach(columna => {
+        let colTest = columna.filter(contenido => contenido == undefined);
+        if (colTest.length == columna.length) {
+            popCols++
+        };
+    });
+
+    for (let i = 0; i < popCols; i++) {
+        columnas.pop();
+    }
+    
 }
+
+// Normalizador de telefonos
 
 function normalizarTelefonos(columna) {
 
