@@ -14,8 +14,24 @@
 
 <!-- Popper -->
 <script>
-    var ref = $('#contadorSalida');
     var popup = $('#popup');
+
+    window.onload = function() {
+        var popupIcono = document.createElement('I');
+
+        popupIcono.classList.add('fas');
+        popupIcono.classList.add('fa-info-circle');
+
+        var popupSpan = document.createElement('SPAN');
+        var popupTexto = document.createTextNode(' Resultado copiado al portapapeles');
+        
+        var popup = document.getElementById('popup');
+        popupSpan.appendChild(popupTexto);
+        popup.appendChild(popupIcono);
+        popup.appendChild(popupSpan);
+    }
+
+    var ref = $('#contadorSalida');
     popup.hide();
 
     function mostrarPopper() {

@@ -59,8 +59,7 @@
                 <div class="col-4">
                     <div class="textarea">
                         <div id="popup">
-                            <i class="fas fa-info-circle"></i>
-                            &nbsp;Resultado copiado
+                            <!-- popup -->
                         </div>
                         <textarea name="salida" class="p-3" id="salida"></textarea>
                         <div class="contador text-center" id="contadorSalida">
@@ -79,6 +78,13 @@
         </main>
     </div>
 </div>
+
+<!-- Actualizar el enlace del menu -->
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        colorEnlace(2);
+    });
+</script>
 
 <!-- Scripts de cada seccion -->
 <script src="../js/concatenar.js"></script>

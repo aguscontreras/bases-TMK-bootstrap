@@ -122,14 +122,15 @@
 
 .descripcion h2 {
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--color-azul);
     margin: 0;
 }
 
 .descripcion h5 {
-    font-size: 1rem;
-    color: var(--color-gris-oscuro)
+    font-size: .9rem;
+    color: var(--color-gris-medio);
+    font-weight: 500;
 }
 
 
@@ -171,7 +172,7 @@
 
 .contenedor-inputs .input-text {
     background-color: #fff;
-    border: 2px solid var(--color-gris-medio);
+    border: 1px solid var(--color-gris-medio);
     font-size: .95rem;
 }
 
@@ -220,19 +221,20 @@ div.contenedor-flecha i {
 
 .menu, .instrucciones {
     padding-top: 10vh;
-    background-color: var(--color-azul);
-    color: #fff;
+    background-color: var(--color-gris-fondo);
+    color: var(--color-gris-oscuro);
 }
 
 .menu h3, .instrucciones h3 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 700;
-    padding-top: 1rem;
+    padding-top: 1.1rem;
 }
 
 .menu ul {
     list-style: none;
     padding: 0;
+    font-size: .9rem;
 }
 
 .menu li, .instrucciones li {
@@ -240,20 +242,31 @@ div.contenedor-flecha i {
 }
 
 .menu ul li a {
-    color: #fff;
+    color: var(--color-gris-oscuro);
     text-decoration: none;
 }
 
 .menu ul li a:hover {
-    color: var(--color-verde);
+    color: var(--color-verde)!important;
     font-weight: 600;
+}
+
+.activo {
+    font-weight: 600;
+}
+
+.activo::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
+    color: var(--color-verde);
+    margin-right: 3px;
 }
 
 /* INSTRUCCIONES */
 
 .instrucciones {
     left: -16.666667%;
-    /* left: 0; */
     padding: 10vh 0;
     overflow: hidden;
     font-size: .95rem;
@@ -303,5 +316,9 @@ div.contenedor-flecha i {
     font-weight: 600;
     padding: 10px;
     border-radius: 4px;
-    color: var(--color-naranja);
+    color: var(--color-gris-oscuro);
+  }
+
+  #popup i {
+      color: var(--color-naranja);
   }

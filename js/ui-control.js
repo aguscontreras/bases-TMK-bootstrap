@@ -16,3 +16,12 @@ botonProcesar.addEventListener('click', function() {
         location.reload();
     }
 })
+
+
+// Elaces del menu
+
+let enlacesMenu = document.querySelectorAll('.menu ul li a');
+
+const colorEnlace = function (enlace) {
+    enlacesMenu[enlace].classList.add('activo');
+}

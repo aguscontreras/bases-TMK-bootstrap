@@ -1,3 +1,6 @@
+// Este archivo tiene las funciones comunes a todas las secciones,
+// para cargar siempre el mismo archivo desde el footer.
+
 /* VARIABLES */
 
 //Campos de entrada y salida
@@ -18,6 +21,7 @@ let col_1 = [],
     col_5 = [], 
     col_6 = [], 
     col_7 = [];
+
 let columnas = new Array (col_1, col_2, col_3, col_4, col_5, col_6, col_7);
 
 //Contadores de datos (debajo de los textareas) y tiempo total
@@ -82,105 +86,71 @@ function armarColumnasGlobal() {
     }
 }
 
-function normalizarTelefonos(a) {
+function normalizarTelefonos(columna) {
 
     // DEJA SOLAMENTE LOS NUMEROS
-    for (let j = 0; j < a.length; j++) {
-        a[j] = a[j].replace(/\W\D/g, '');
+    for (let j = 0; j < columna.length; j++) {
+        columna[j] = columna[j].replace(/\W\D/g, '');
     }
 
     // AGREGA UN 0 A LOS NUMEROS VACIOS (para evitar que se cancele la funcion)
-    for (let j = 0; j < a.length; j++) {
-        if (a[j] == '') {
-            a[j] = '0';
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j] == '') {
+            columna[j] = '0';
         };
     };
 
     /* LIMPIA NUMEROS Y QUITA EL PRIMER CERO EN CASO QUE EL TELEFONO COMIENCE CON DOS CEROS*/
-    for (let j = 0; j < a.length; j++) {
-        a[j] = a[j].replace(/\D/g, '');
-        if (a[j] != undefined && a[j].startsWith("00")) {
-            a[j] = a[j].substr(1);
+    for (let j = 0; j < columna.length; j++) {
+        columna[j] = columna[j].replace(/\D/g, '');
+        if (columna[j] != undefined && columna[j].startsWith("00")) {
+            columna[j] = columna[j].substr(1);
         };
     };
 
     /* PARA QUITAR TODOS LOS CARACTERES QUE NO SEAN NUMEROS Y AGREGAR 0 INICIAL */
-    for (let j = 0; j < a.length; j++) {
-        if (a[j][0] != "0") {
-            a[j] = "0" + a[j];
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j][0] != "0") {
+            columna[j] = "0" + columna[j];
         }
     };
 
     /* QUITA LA CARACTERISTICA DE CORDOBA 0351 */
-    for (let j = 0; j < a.length; j++) {
-        if (a[j].startsWith("0351")) {
-            a[j] = a[j].replace("0351", "");
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j].startsWith("0351")) {
+            columna[j] = columna[j].replace("0351", "");
         };
     };
 
     /* ACOMODA LOS 015 INICALES */
-    for (let j = 0; j < a.length; j++) {
-        if (a[j].substr(0, 3) == "015") {
-            a[j] = a[j].substr(1);
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j].substr(0, 3) == "015") {
+            columna[j] = columna[j].substr(1);
         };
     };
 
     /* ACOMODA LOS QUE COMIENZAN CON 04 Y DEJA SOLO 4 */
-    for (let j = 0; j < a.length; j++) {
-        if (a[j].substr(0, 2) == "04") {
-            a[j] = a[j].substr(1);
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j].substr(0, 2) == "04") {
+            columna[j] = columna[j].substr(1);
         };
     };
 
     /* AGREGA UN 15 PARA LOS NUMEROS QUE NO COMIENCEN CON 4 Y 15 */
-    for (let j = 0; j < a.length; j++) {
-        if (a[j][0] != "4" && a[j][0] != "1" && a[j][0] != "0") {
-            a[j] = "15" + a[j];
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j][0] != "4" && columna[j][0] != "1" && columna[j][0] != "0") {
+            columna[j] = "15" + columna[j];
         };
     };
 
     /* QUITA LOS DATOS QUE SEAN UN SOLO 0 */
-    for (let j = 0; j < a.length; j++) {
-        if (a[j].length < 2) {
-            a[j] = "";
+    for (let j = 0; j < columna.length; j++) {
+        if (columna[j].length < 2) {
+            columna[j] = "";
         };
     };
-
 };
 
-let copiarResultado = true;
-
-function imprimirDatos() {
-
-    // Junta las columnas y las ordena en el textarea de salida
-    for (let j = 0; j < columnas.length; j++) {
-        for (let k = 0; k < columnas[0].length; k++) {
-            datosSalida.push(columnas[j][k] + '\t');
-        };
-    };
-
-    textareaSalida.value = datosSalida.toString().replace(/,/g, '\n');
-
-    // Muestra el tiempo total
-    finTiempo = new Date();
-
-    tiempoTotal = finTiempo - inicioTiempo;
-
-    // Actualiza el contador de salida
-    contadorFilasSalida = datosSalida.length;
-    spancontadorFilasSalida = `<span>Filas: ${contadorFilasSalida}</span> | <span>Tiempo: ${tiempoTotal}ms</span>`;
-    divContador[1].innerHTML = spancontadorFilasSalida;
-
-    // Copiado automatico del resultado
-    setTimeout(() => {
-        if (copiarResultado) {
-            textareaSalida.select();
-            document.execCommand('copy');
-            mostrarPopper();
-        }
-    }, 200);
-
-}
 
 // Para probar cosas
 function imprimePrueba(e) {
