@@ -1,7 +1,7 @@
 // La funcion de normalizar se incluye en el JS de globales.js 
 // porque se usa en más de una herramienta.
 
-function normalizar() {
+function procesar() {
     armarColumnasGlobal();
 
     for(let i=0; i<columnas.length; i++) {
@@ -73,5 +73,5 @@ function imprimirDatos() {
             document.execCommand('copy');
             mostrarPopper();
         }
-    }, 500);
+    }, 800);
 }

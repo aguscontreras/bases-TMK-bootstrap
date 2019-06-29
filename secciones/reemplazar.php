@@ -45,30 +45,30 @@
                     <div class="textarea">
                         <textarea name="entrada" class="p-3" id="entrada"></textarea>
                         <div class="contador text-center">
-                            <span>Contador</span>
+                            <span>Filas: 0</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="row h-100 justify-content-around align-items-center contenedor-inputs">
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 1">
+                        <input type="text" name="" id="iParametro1" class="form-control input-text col-5" placeholder="Texto 1">
                         <div class="contenedor-flecha"><i class="fas fa-arrow-right"></i></div>
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 2">
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 1">
+                        <input type="text" name="" id="eParametro1" class="form-control input-text col-5" placeholder="Texto 2">
+                        <input type="text" name="" id="iParametro2" class="form-control input-text col-5" placeholder="Texto 1">
                         <div class="contenedor-flecha"><i class="fas fa-arrow-right"></i></div>
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 2">
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 1">
+                        <input type="text" name="" id="eParametro2" class="form-control input-text col-5" placeholder="Texto 2">
+                        <input type="text" name="" id="iParametro3" class="form-control input-text col-5" placeholder="Texto 1">
                         <div class="contenedor-flecha"><i class="fas fa-arrow-right"></i></div>
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 2">
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 1">
+                        <input type="text" name="" id="eParametro3" class="form-control input-text col-5" placeholder="Texto 2">
+                        <input type="text" name="" id="iParametro4" class="form-control input-text col-5" placeholder="Texto 1">
                         <div class="contenedor-flecha"><i class="fas fa-arrow-right"></i></div>
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 2">
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 1">
+                        <input type="text" name="" id="eParametro4" class="form-control input-text col-5" placeholder="Texto 2">
+                        <input type="text" name="" id="iParametro5" class="form-control input-text col-5" placeholder="Texto 1">
                         <div class="contenedor-flecha"><i class="fas fa-arrow-right"></i></div>
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 2">
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 1">
+                        <input type="text" name="" id="eParametro5" class="form-control input-text col-5" placeholder="Texto 2">
+                        <input type="text" name="" id="iParametro6" class="form-control input-text col-5" placeholder="Texto 1">
                         <div class="contenedor-flecha"><i class="fas fa-arrow-right"></i></div>
-                        <input type="text" name="" id="" class="form-control input-text col-5" placeholder="Texto 2">
+                        <input type="text" name="" id="eParametro6" class="form-control input-text col-5" placeholder="Texto 2">
                     </div>
                 </div>
                 <div class="col-4">
@@ -77,15 +77,15 @@
                             <!-- popup -->
                         </div>
                         <textarea name="salida" class="p-3" id="salida"></textarea>
-                        <div class="contador text-center">
-                            <span>Contador</span>
+                        <div class="contador text-center" id="contadorSalida">
+                            <span>Filas: 0</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row footer justify-content-center align-items-center">
                 <div class="col-2">
-                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="armarIVR();">
+                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="procesar();">
                         <!-- <div>Procesar</div> -->
                     </button>
                 </div>

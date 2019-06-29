@@ -59,7 +59,7 @@
             </div>
             <div class="row footer justify-content-center align-items-center">
                 <div class="col-2">
-                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="normalizar();">
+                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="procesar();">
                         <!-- <div>Procesar</div> -->
                     </button>
                 </div>
