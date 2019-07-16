@@ -52,7 +52,7 @@
                 <div class="col-2">
                     <div class="row align-items-center justify-content-center h-100">
                         <div class="col-12">
-                            <input type="text" name="" id="" class="form-control input-text my-2" placeholder="Separador">
+                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador">
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
             </div>
             <div class="row footer justify-content-center align-items-center">
                 <div class="col-2">
-                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="armarIVR();">
+                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="concatenarS();">
                         <!-- <div>Procesar</div> -->
                     </button>
                 </div>
