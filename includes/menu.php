@@ -12,7 +12,7 @@
             <a href="concatenar.php">Concatenar (simple)</a>
         </li>
         <li>
-            <a href="">Concatenar (múltiple)</a>
+            <a href="concatenarmultiple.php">Concatenar (múltiple)</a>
         </li>
     </ul>
     <h3>Telemercado</h3>
