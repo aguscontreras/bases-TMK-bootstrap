@@ -44,12 +44,13 @@
                 <div class="col-2">
                     <div class="row h-100">
                         <div class="col-12 d-flex flex-column justify-content-around align-items-center h-100">
-                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador 1">
-                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador 2">
-                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador 3">
-                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador 4">
-                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador 5">
-                            <input type="text" name="separador" id="separador" class="form-control input-text my-2" placeholder="Separador 6">
+                            <input type="text" id="separador1" class="form-control input-text my-2" placeholder="Separador 1">
+                            <input type="text" id="separador2" class="form-control input-text my-2" placeholder="Separador 2">
+                            <input type="text" id="separador3" class="form-control input-text my-2" placeholder="Separador 3">
+                            <input type="text" id="separador4" class="form-control input-text my-2" placeholder="Separador 4">
+                            <input type="text" id="separador5" class="form-control input-text my-2" placeholder="Separador 5">
+                            <input type="text" id="separador6" class="form-control input-text my-2" placeholder="Separador 6">
+                            <input type="text" id="separador7" class="form-control input-text my-2" placeholder="Separador 7">
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
             </div>
             <div class="row footer justify-content-center align-items-center">
                 <div class="col-2">
-                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="concatenarS();">
+                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="concatenarM();">
                         <!-- <div>Procesar</div> -->
                     </button>
                 </div>
@@ -92,6 +93,6 @@
 </script>
 
 <!-- Scripts de cada seccion -->
-<script src="../js/concatenar.js"></script>
+<script src="../js/concatenarmult.js"></script>
 
 <?php include '../includes/footer.php' ?>
