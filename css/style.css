@@ -73,7 +73,8 @@
     --color-verde-hover: rgb(0, 184, 138);
     --color-naranja: rgb(255, 112, 51);
     --color-naranja-hover: rgb(231, 101, 45);
-    --color-celeste: rgb(211, 230, 247);
+    --color-celeste: rgb(110, 160, 226);
+    --color-celeste-hover: rgb(94, 137, 194);
 }
 
 
@@ -181,7 +182,7 @@ div.contenedor-flecha i {
 }
 
 
-/* FOOTERS */
+/* BOTONES */
 
 .btn-primary {
     background-color: var(--color-verde);
@@ -209,6 +210,16 @@ div.contenedor-flecha i {
 
 .btn-primary span {
     position: absolute
+}
+
+.btn-secondary {
+    background-color: var(--color-celeste);
+    width: 100%;
+    border: red;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-celeste-hover);
 }
 
 .procesar {

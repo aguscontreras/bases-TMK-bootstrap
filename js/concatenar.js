@@ -7,6 +7,13 @@ function concatenarS() {
     // Convierte todos los datos del textarea de entrada en String (texto), y reemplaza las comas con el separador ingresado
     // Funciona asi porque al convertir de array a string se separan los indices con comas
 
+
+    for(let i=0; i<datosEntrada.length; i++) {
+        for(let j=0; j<datosEntrada[i].length; j++) {
+            datosEntrada[i][j] = datosEntrada[i][j].replace(/,/g, '');
+        }
+    }
+
     for (let i = 0; i < datosEntrada.length; i++) {
         columnaUnica[i] = datosEntrada[i].toString();
         columnaUnica[i] = columnaUnica[i].replace(/,/g, document.querySelector('#separador').value);

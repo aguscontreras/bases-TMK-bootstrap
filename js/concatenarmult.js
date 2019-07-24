@@ -14,28 +14,71 @@ function concatenarM() {
 
     armarColumnasGlobal();
 
-    // Convierte todos los datos del textarea de entrada en String (texto), y reemplaza las comas con el separador ingresado
-    // Funciona asi porque al convertir de array a string se separan los indices con comas
+    // Coloca las columnas con los separadores en sus posiciones
+
+    /*
+        Dentro del array se colocan los separadores en orden: un separador, y una columna, y así.
+        El array COLUMNAS es el que retorna la funcion armarColumnasGlobal();
+    */
 
     for (let i = 0; i < columnas.length; i++) {
         columnaUnica.push(separadores[i]);
         columnaUnica.push(columnas[i]);
     }
 
+    // Repite el separador por toda la columna
+
+    /*
+        El primer FOR recorre todas las columnas, y el segundo todas las filas.
+        En la condicion del segundo FOR se resta 1 al .lenght de las columnas porque ya tiene una fila, que es el separador ingresado
+        al principio.
+
+        El incremento es 2 ya que los separadores siempre van a terminar en indices pares del array columnaUnica.
+        Luego se repite el mismo separador por todas las filas.
+    */
+
     for (let i = 0; i < columnaUnica.length; i += 2) {
-        for (let j = 0; j < (columnas[1].length - 1); j++) {
+        for (let j = 0; j < (columnas[0].length - 1); j++) {
             let repetir = columnaUnica[i][0];
             columnaUnica[i].push(repetir);
         }
     }
 
+    // Quita las comas de los datos "crudos"
+
+    /*
+        Si los datos tienen comas, se deben sacar ya que van a interferir con el armado de las columnas y filas.
+        Más adelante se usan las comas para separar en filas el array final, por ende cualquier coma intermedia
+        va a producir un salto de línea no deseado.
+
+        En este caso se recorren los índices impares del array columnaUnica.
+    */
+
+    for (let i = 1; i < columnaUnica.length; i += 2) {
+        for (let j = 0; j < (columnas[0].length); j++) {
+            columnaUnica[i][j] = columnaUnica[i][j].replace(/,/g, ' ');
+        }
+    }
+
     imprimirDatos();
+
 };
 
 
 function imprimirDatos() {
 
     // Coloca el resultado en la salida
+
+    /*
+        El array datosSalida se puede imaginar como una columna, donde en cada fila se van ingresando todas las filas
+        de las columnas, concatenadas, separadas por un espacio.
+
+        La logica del FOR es: recorrer todas las filas del array columnaUnica y colocar en el array datosSalida la fila 1 de la columna 1, espacio,
+        fila 1 de la columna 2, espacio, fila 1 de la columna 3......
+
+        El SWITCH se usa porque no sabemos cuantas columnas estamos usando. Ya que el maximo de columnas y separadores es 7,
+        el máximo posible de columnas resultantes es 14.
+    */
 
     for (let i = 0; i < columnaUnica[0].length; i++) {
         switch (columnaUnica.length) {
