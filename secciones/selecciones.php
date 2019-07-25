@@ -52,13 +52,13 @@
                 <div class="col-2">
                     <div class="row align-items-center justify-content-center h-100">
                         <div class="col-12">
-                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesDir" onclick ="seleccionesDir();">
+                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesDir" onclick="seleccionesDir();">
                                 Armar direcciones
                             </button>
-                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesFechas" onclick ="seleccionesFechas();">
+                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesFechas" onclick="seleccionesFechas();">
                                 Armar fechas
                             </button>
-                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesFechas" onclick ="seleccionesProvincias();">
+                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesFechas" onclick="seleccionesProvincias();">
                                 Reemplazar provincias
                             </button>
                         </div>
@@ -90,7 +90,7 @@
 <!-- Actualizar el enlace del menu -->
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        colorEnlace(2);
+        colorEnlace(6);
     });
 </script>
 

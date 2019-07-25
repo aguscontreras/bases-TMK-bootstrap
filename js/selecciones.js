@@ -71,8 +71,28 @@ function seleccionesProvincias() {
     }
 
     datosSalida = columnas;
-
     imprimirDatos(columnas[0]);
+
+}
+
+function seleccionesFechas() {
+
+    inicioTiempo = new Date();
+
+    let anio,
+        mes,
+        dia;
+
+    for (let i = 0; i < datosEntrada.length; i++) {
+        anio = datosEntrada[i].substr(0, 4);
+        mes = datosEntrada[i].substr(4, 2);
+        dia = datosEntrada[i].substr(6, 2);
+
+        datosEntrada[i] = `${dia}/${mes}/${anio}`;
+    };
+
+    datosSalida = datosEntrada;
+    imprimirDatos(datosEntrada);
 
 }
 

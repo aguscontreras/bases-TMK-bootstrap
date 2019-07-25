@@ -1,11 +1,11 @@
+// Botones de procesos
 
 let botonProcesar = document.querySelector('#botonProcesar');
-
 let estadoProcesar = false;
 
 botonProcesar.innerHTML = 'Procesar';
 
-botonProcesar.addEventListener('click', function() {
+botonProcesar.addEventListener('click', function () {
 
     if (!estadoProcesar) {
         botonProcesar.style.background = 'rgb(255, 112, 51)';
@@ -15,7 +15,31 @@ botonProcesar.addEventListener('click', function() {
         estadoProcesar = false;
         location.reload();
     }
-})
+});
+
+// Botones secundarios
+
+let botonSecundario = document.querySelectorAll('.btn-secondary');
+
+for (let i = 0; i < botonSecundario.length; i++) {
+    botonSecundario[i].addEventListener('click', estadoBotonSecundario)
+}
+
+function estadoBotonSecundario() {
+    if (!estadoProcesar) {
+        botonProcesar.style.background = 'rgb(255, 112, 51)';
+        botonProcesar.innerHTML = 'Recargar';
+        botonSecundario.forEach(boton => {
+            boton.style.opacity = '.2';
+            boton.style.pointerEvents = 'none';
+        });
+        this.style.opacity = '1';
+        estadoProcesar = true;
+    } else {
+        estadoProcesar = false;
+        location.reload();
+    }
+};
 
 
 // Elaces del menu
