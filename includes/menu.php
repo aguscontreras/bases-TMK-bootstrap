@@ -24,7 +24,7 @@
     <h3>BPC</h3>
     <ul>
         <li>
-            <a href="">ATM + SUC</a>
+            <a href="atmSuc.php">Préstamos (2A)</a>
         </li>
         <li>
             <a href="selecciones.php">Selecciones</a>
