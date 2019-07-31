@@ -119,7 +119,7 @@ function reemplazarDatos() {
 
 
     for (let i = 0; i < datosEntrada.length; i++) {
-        datosEntrada[i] = datosEntrada[i].replace(regEx1, reem1).replace(regEx2, reem2).replace(regEx3, reem3).replace(regEx4, reem4).replace(regEx5, reem5).replace(regEx6, reem6);
+        datosEntrada[i] = datosEntrada[i].replace(regEx1, reem1).replace(regEx2, reem2).replace(regEx3, reem3).replace(regEx4, reem4).replace(regEx5, reem5).replace(regEx6, reem6).replace(',', '');;
     }
 
 };
