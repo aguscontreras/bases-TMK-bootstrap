@@ -3,7 +3,7 @@ let columnaUnica = new Array();
 function atmPrecas() {
 
     let separadores = [
-        ['PRECA_104: '],
+        ['PRECA104: '],
         [' /PRECA105: '],
         [' /PRECA111: '],
         [' /PRECA134: '],
