@@ -52,7 +52,7 @@ function atmNombreApe() {
 
     for(let i=0; i<columnas.length; i++) {
         for(let j=0; j<columnas[i].length; j++) {
-            columnas[i][j] = columnas[i][j].replace('S/D', '');
+            columnas[i][j] = columnas[i][j].replace('S/D', '').replace(',', '');
         }
     }
 
