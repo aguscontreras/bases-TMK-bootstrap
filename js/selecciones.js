@@ -66,7 +66,8 @@ function seleccionesProvincias() {
             columnas[i][j] = columnas[i][j].replace("21 La Pampa", "L");
             columnas[i][j] = columnas[i][j].replace("23 Santa Cruz", "Z");
             columnas[i][j] = columnas[i][j].replace("24 Tierra de Fuego", "V");
-            columnas[i][j] = columnas[i][j].replace("05 Entre Rios", "ENTRERIOOOOOSSSS");
+            columnas[i][j] = columnas[i][j].replace("05 Entre Rios", "E");
+            columnas[i][j] = columnas[i][j].replace("17 Chubut", "U");
         }
     }
 
