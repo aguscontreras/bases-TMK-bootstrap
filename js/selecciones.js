@@ -85,6 +85,10 @@ function seleccionesFechas() {
         dia;
 
     for (let i = 0; i < datosEntrada.length; i++) {
+
+        //Deja solamente numeros
+        datosEntrada[i] = datosEntrada[i].replace(/\W\D/g, '');
+
         anio = datosEntrada[i].substr(0, 4);
         mes = datosEntrada[i].substr(4, 2);
         dia = datosEntrada[i].substr(6, 2);
