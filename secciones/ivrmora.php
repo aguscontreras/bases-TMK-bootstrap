@@ -53,13 +53,7 @@
                     <div class="row align-items-center justify-content-center h-100">
                         <div class="col-12">
                             <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesDir" onclick="moraReemplazar();">
-                                Reemplazar repetidos
-                            </button>
-                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesFechas" onclick="">
-                            Nada
-                            </button>
-                            <button class="btn btn-secondary my-1 py-2" id="botonSeleccionesFechas" onclick="">
-                            Nada
+                                Quitar repetidos
                             </button>
                         </div>
                     </div>
@@ -74,13 +68,6 @@
                             <span>Filas: 0</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row footer justify-content-center align-items-center">
-                <div class="col-2">
-                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="moraTodo();">
-                        <!-- <div>Procesar</div> -->
-                    </button>
                 </div>
             </div>
         </main>

@@ -32,8 +32,8 @@
                     <h5>Datos a procesar</h5>
                 </div>
                 <div class="col-2 text-center align-self-end">
-                    <h2 class="my-1">Operaciones</h2>
-                    <h5>Texto entre columnas</h5>
+                    <h2 class="my-1">Proceso</h2>
+                    <h5>Acción a realizar</h5>
                 </div>
                 <div class="col-4 text-center align-self-end">
                     <h2 class="my-1">Resultado</h2>
@@ -74,13 +74,6 @@
                             <span>Filas: 0</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row footer justify-content-center align-items-center">
-                <div class="col-2">
-                    <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="seleccionesTodo();">
-                        <!-- <div>Procesar</div> -->
-                    </button>
                 </div>
             </div>
         </main>
