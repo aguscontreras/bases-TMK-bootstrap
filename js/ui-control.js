@@ -1,3 +1,11 @@
+// Elaces del menu
+
+let enlacesMenu = document.querySelectorAll('.menu ul li a');
+
+const colorEnlace = function (enlace) {
+    enlacesMenu[enlace].classList.add('activo');
+}
+
 // Botones de procesos
 
 let botonProcesar = document.querySelector('#botonProcesar');
@@ -40,12 +48,3 @@ function estadoBotonSecundario() {
         location.reload();
     }
 };
-
-
-// Elaces del menu
-
-let enlacesMenu = document.querySelectorAll('.menu ul li a');
-
-const colorEnlace = function (enlace) {
-    enlacesMenu[enlace].classList.add('activo');
-}
