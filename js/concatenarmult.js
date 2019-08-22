@@ -21,7 +21,7 @@ function concatenarM() {
         El array COLUMNAS es el que retorna la funcion armarColumnasGlobal();
     */
 
-    for (let i = 0; i < columnas.length; i++) {
+    for (let i = 0; i < separadores.length; i++) {
         columnaUnica.push(separadores[i]);
         columnaUnica.push(columnas[i]);
     }
@@ -44,6 +44,24 @@ function concatenarM() {
         }
     }
 
+    // Quita las columnas sobrantes
+
+    /*
+        Se recorren las columnas buscando los valores UNDEFINED, y se crea una columna de prueba con estos valores
+        Si la columna de prueba tiene la misma cantidad de UNDEFINED que la columna en cuestion,
+        se borra del array COLUMNAS tantas veces como columnas UNDEFINED haya
+    */
+
+    // Cuenta cuantas columnas eliminar del array COLUMNAS
+
+    columnaUnica.forEach(columna => {
+        if (columna == undefined) {
+            let index = columnaUnica.indexOf(columna);
+            columnaUnica.splice(index, 1);
+            console.log(columnaUnica);
+        }
+    });
+
     // Quita las comas de los datos "crudos"
 
     /*
@@ -56,7 +74,7 @@ function concatenarM() {
 
     for (let i = 1; i < columnaUnica.length; i += 2) {
         for (let j = 0; j < (columnas[0].length); j++) {
-            columnaUnica[i][j] = columnaUnica[i][j].replace(/,/g, ' ');
+            columnaUnica[i][j] = columnaUnica[i][j].replace(/,/g, '');
         }
     }
 
@@ -86,43 +104,43 @@ function imprimirDatos() {
                 datosSalida.push(columnaUnica[0][i])
                 break;
             case 2:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i])
                 break;
             case 3:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i])
                 break;
             case 4:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i])
                 break;
             case 5:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i])
                 break;
             case 6:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i])
                 break;
             case 7:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i])
                 break;
             case 8:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i])
                 break;
             case 9:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i] + ' ' + columnaUnica[8][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i] + '' + columnaUnica[8][i])
                 break;
             case 10:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i] + ' ' + columnaUnica[8][i] + ' ' + columnaUnica[9][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i] + '' + columnaUnica[8][i] + '' + columnaUnica[9][i])
                 break;
             case 11:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i] + ' ' + columnaUnica[8][i] + ' ' + columnaUnica[9][i] + ' ' + columnaUnica[10][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i] + '' + columnaUnica[8][i] + '' + columnaUnica[9][i] + '' + columnaUnica[10][i])
                 break;
             case 12:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i] + ' ' + columnaUnica[8][i] + ' ' + columnaUnica[9][i] + ' ' + columnaUnica[10][i] + ' ' + columnaUnica[11][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i] + '' + columnaUnica[8][i] + '' + columnaUnica[9][i] + '' + columnaUnica[10][i] + '' + columnaUnica[11][i])
                 break;
             case 13:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i] + ' ' + columnaUnica[8][i] + ' ' + columnaUnica[9][i] + ' ' + columnaUnica[10][i] + ' ' + columnaUnica[11][i] + ' ' + columnaUnica[12][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i] + '' + columnaUnica[8][i] + '' + columnaUnica[9][i] + '' + columnaUnica[10][i] + '' + columnaUnica[11][i] + '' + columnaUnica[12][i])
                 break;
             case 14:
-                datosSalida.push(columnaUnica[0][i] + ' ' + columnaUnica[1][i] + ' ' + columnaUnica[2][i] + ' ' + columnaUnica[3][i] + ' ' + columnaUnica[4][i] + ' ' + columnaUnica[5][i] + ' ' + columnaUnica[6][i] + ' ' + columnaUnica[7][i] + ' ' + columnaUnica[8][i] + ' ' + columnaUnica[9][i] + ' ' + columnaUnica[10][i] + ' ' + columnaUnica[11][i] + ' ' + columnaUnica[12][i] + ' ' + columnaUnica[13][i])
+                datosSalida.push(columnaUnica[0][i] + '' + columnaUnica[1][i] + '' + columnaUnica[2][i] + '' + columnaUnica[3][i] + '' + columnaUnica[4][i] + '' + columnaUnica[5][i] + '' + columnaUnica[6][i] + '' + columnaUnica[7][i] + '' + columnaUnica[8][i] + '' + columnaUnica[9][i] + '' + columnaUnica[10][i] + '' + columnaUnica[11][i] + '' + columnaUnica[12][i] + '' + columnaUnica[13][i])
                 break;
             default:
                 datosSalida = undefined;
