@@ -47,18 +47,14 @@ function concatenarM() {
     // Quita las columnas sobrantes
 
     /*
-        Se recorren las columnas buscando los valores UNDEFINED, y se crea una columna de prueba con estos valores
-        Si la columna de prueba tiene la misma cantidad de UNDEFINED que la columna en cuestion,
-        se borra del array COLUMNAS tantas veces como columnas UNDEFINED haya
+        Se quitan del array columnaUnica todos los indices con valor Undefined
     */
-
-    // Cuenta cuantas columnas eliminar del array COLUMNAS
 
     columnaUnica.forEach(columna => {
         if (columna == undefined) {
+            //Obtener el indice de la columna Undefined y quitarlo
             let index = columnaUnica.indexOf(columna);
             columnaUnica.splice(index, 1);
-            console.log(columnaUnica);
         }
     });
 
@@ -78,12 +74,12 @@ function concatenarM() {
         }
     }
 
-    imprimirDatos();
+    imprimirDatos(columnaUnica[1]);
 
 };
 
 
-function imprimirDatos() {
+function imprimirDatos(referencia) {
 
     // Coloca el resultado en la salida
 
@@ -157,7 +153,7 @@ function imprimirDatos() {
     tiempoTotal = finTiempo - inicioTiempo;
 
     // Actualiza el contador de salida
-    contadorFilasSalida = columnaUnica[1].length;
+    contadorFilasSalida = referencia.length;
     spancontadorFilasSalida = `<span>Filas: ${contadorFilasSalida}</span> | <span>Tiempo: ${tiempoTotal}ms</span>`;
     divContador[1].innerHTML = spancontadorFilasSalida;
 
