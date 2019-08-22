@@ -16,13 +16,7 @@ function imprimirDatos() {
 
 
     // Junta las columnas y las ordena en el textarea de salida
-    /*
-        for (let j = 0; j < columnas[0].length; j++) {
-            for (let k = 0; k < columnas.length; k++) {
-                datosSalida.push(columnas[k][j] + '\t');
-            };
-        };
-    */
+
     for (let i = 0; i < columnas[0].length; i++) {
         switch (columnas.length) {
             case 1:
