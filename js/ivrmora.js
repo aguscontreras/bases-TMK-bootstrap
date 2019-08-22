@@ -3,13 +3,24 @@ function moraReemplazar() {
     armarColumnasGlobal();
 
     for (let i = 0; i < columnas.length; i++) {
+        normalizarTelefonos(columnas[i]);
+    };
+
+    for (let i = 0; i < columnas.length; i++) {
+
         for (let j = 0; j < columnas[i].length; j++) {
+
             let numeroTest = columnas[i][j];
             let indiceTest = i + 1;
 
             for (let k = indiceTest; k < columnas.length; k++) {
+
                 if (columnas[i][j] === columnas[k][j]) {
-                    console.warn(columnas[i][j] + " Y " + columnas[k][j] + " SON IGUALES : SE BORRARÁ EL SEGUNDO");
+
+                    if (columnas[i][j] != '') {
+                        console.warn(columnas[i][j] + " y " + columnas[k][j] + " Son iguales en C-" + (k + 1) + ', F-' + (j + 1));
+                    }
+
                     columnas[k][j] = '';
                 }
             }
