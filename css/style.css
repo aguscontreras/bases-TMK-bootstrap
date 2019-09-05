@@ -121,14 +121,14 @@
 
 /* DESCRIPCIONES */
 
-.descripcion h2 {
+h2 {
     font-weight: 900;
     font-size: 1.2rem;
     color: var(--color-azul);
     margin: 0;
 }
 
-.descripcion h5 {
+h5 {
     font-size: .9rem;
     color: var(--color-gris-medio);
     font-weight: 500;
@@ -144,15 +144,18 @@
 }
 
 .textarea textarea {
-    font-family: 'Roboto Mono', Arial, "Helvetica Neue", Helvetica, sans-serif;
     height: 93%;
     width: 100%;
     display: block;
     resize: none;
-    color: var(--color-gris-oscuro);
     background-color: transparent;
     border: none;
-    font-size: .8rem;
+}
+
+input.form-control, .textarea textarea {
+    font-family: 'Roboto Mono', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: var(--color-gris-oscuro);
+    font-size: .75rem;
     font-weight: 400;
 }
 

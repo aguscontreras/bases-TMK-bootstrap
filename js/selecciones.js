@@ -101,6 +101,24 @@ function seleccionesFechas() {
 
 }
 
+function seleccionesNombreApe() {
+
+    armarColumnasGlobal();
+
+    for(let i=0; i<columnas.length; i++) {
+        for(let j=0; j<columnas[i].length; j++) {
+            columnas[i][j] = columnas[i][j].replace('S/D', '').replace(',', '');
+        }
+    }
+
+    for(let i=0; i<columnas[0].length; i++) {
+        datosSalida.push(columnas[0][i] + ' ' + columnas[1][i] + '\t' + columnas[2][i] + ' ' + columnas[3][i]);
+    }
+
+    imprimirDatos(datosSalida);
+
+}
+
 
 function imprimirDatos(referencia) {
 

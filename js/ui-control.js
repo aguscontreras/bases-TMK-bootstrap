@@ -11,19 +11,19 @@ const colorEnlace = function (enlace) {
 let botonProcesar = document.querySelector('#botonProcesar');
 let estadoProcesar = false;
 
-botonProcesar.innerHTML = 'Procesar';
-
-botonProcesar.addEventListener('click', function () {
-
-    if (!estadoProcesar) {
-        botonProcesar.style.background = 'rgb(255, 112, 51)';
-        botonProcesar.innerHTML = 'Recargar';
-        estadoProcesar = true;
-    } else {
-        estadoProcesar = false;
-        location.reload();
-    }
-});
+if (botonProcesar) {
+    botonProcesar.innerHTML = 'Procesar';
+    botonProcesar.addEventListener('click', function () {
+        if (!estadoProcesar) {
+            botonProcesar.style.background = 'rgb(255, 112, 51)';
+            botonProcesar.innerHTML = 'Recargar';
+            estadoProcesar = true;
+        } else {
+            estadoProcesar = false;
+            location.reload();
+        }
+    });
+}
 
 // Botones secundarios
 
@@ -35,8 +35,6 @@ for (let i = 0; i < botonSecundario.length; i++) {
 
 function estadoBotonSecundario() {
     if (!estadoProcesar) {
-        botonProcesar.style.background = 'rgb(255, 112, 51)';
-        botonProcesar.innerHTML = 'Recargar';
         botonSecundario.forEach(boton => {
             boton.style.opacity = '.2';
             boton.style.pointerEvents = 'none';
