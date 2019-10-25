@@ -57,11 +57,21 @@
                     </div>
                 </div>
             </div>
-            <div class="row footer justify-content-center align-items-center">
+            <div class="row footer align-items-center">
+                <div class="col-5 text-right">
+                    <label for="marcar-ast" class="bg-light p-1 text-dark border rounded"><input type="checkbox" id="marcar-ast"><small>Marcar números largos con ###</small></label>
+                </div>
                 <div class="col-2">
                     <button class="btn btn-primary procesar position-relative" id="botonProcesar" onclick="procesar();">
                         <!-- <div>Procesar</div> -->
                     </button>
+                </div>
+                <div class="col-5">
+                    <small>
+                        <span id="marcar-texto" class="bg-light p-1 text-dark border rounded" style="display: none">
+                            <i class="fas fa-asterisk"></i>
+                        </span>
+                    </small>
                 </div>
             </div>
         </main>

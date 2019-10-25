@@ -1,6 +1,19 @@
 // La funcion de normalizar se incluye en el JS de globales.js 
 // porque se usa en más de una herramienta.
 
+let marcarAsterisco;
+let contadorAsterisco = 0;
+
+document.getElementById('marcar-ast').onchange = function() {
+    if(this.checked == true) {
+        marcarAsterisco = true;
+    } else {
+        marcarAsterisco = false;
+    }
+    
+    return marcarAsterisco;
+}
+
 function procesar() {
     armarColumnasGlobal();
 
@@ -66,6 +79,13 @@ function imprimirDatos() {
             textareaSalida.select();
             document.execCommand('copy');
             mostrarPopper();
+        }
+        if (contadorAsterisco > 0) {
+
+            let textoAsterisco = document.createTextNode(`Se marcaron ${contadorAsterisco} teléfonos para revisar`);
+            let textoMarcar = document.getElementById('marcar-texto');
+            textoMarcar.style.display = 'inline-block';
+            textoMarcar.appendChild(textoAsterisco);
         }
     }, 800);
 }

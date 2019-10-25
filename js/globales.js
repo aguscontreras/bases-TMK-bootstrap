@@ -165,12 +165,23 @@ function normalizarTelefonos(columna) {
         };
     };
 
+
     /* QUITA LOS DATOS QUE SEAN UN SOLO 0 */
     for (let j = 0; j < columna.length; j++) {
         if (columna[j].length < 2) {
             columna[j] = "";
         };
     };
+
+    /* AGREGA MARCAS A LOS NUMEROS LARGOS (POSIBLES ERRORES DE TIPEO O MAS DE UN TELEFONO EN UNA CELDA) */
+    for (let j = 0; j < columna.length; j++) {
+        if (marcarAsterisco && columna[j].length > 13) {
+            columna[j] = columna[j] + '###';
+            contadorAsterisco ++;
+        };
+    };
+
+    return contadorAsterisco;
 };
 
 
